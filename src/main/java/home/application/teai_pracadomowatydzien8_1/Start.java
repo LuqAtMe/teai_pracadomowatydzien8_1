@@ -34,15 +34,15 @@ public class Start {
         Location selectedCity = getWeoid(CITY);
         Weather weatherFromJson = getWeather(selectedCity.getWoeid());
 
-        WeatherDatabase weatherDatabase = new WeatherDatabase(
+        WeatherForDatabase weatherForDatabase = new WeatherForDatabase(
                 selectedCity.getTitle(),
                 selectedCity.getWoeid(),
                 weatherFromJson.getConsolidatedWeather().get(0).getTheTemp(),
                 LocalDateTime.now()
         );
 
-        weatherRepo.save(weatherDatabase);
-        System.out.println(weatherDatabase.toString());
+        weatherRepo.save(weatherForDatabase);
+        System.out.println(weatherForDatabase.toString());
     }
 
     public Location getWeoid(String city) {

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
-public class WeatherDatabase {
+public class WeatherForDatabase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,10 +17,10 @@ public class WeatherDatabase {
     private Double temperature;
     private LocalDateTime time;
 
-    public WeatherDatabase() {
+    public WeatherForDatabase() {
     }
 
-    public WeatherDatabase(String cityName, Integer weoid, Double temperature, LocalDateTime time) {
+    public WeatherForDatabase(String cityName, Integer weoid, Double temperature, LocalDateTime time) {
         this.cityName = cityName;
         this.weoid = weoid;
         this.temperature = temperature;
